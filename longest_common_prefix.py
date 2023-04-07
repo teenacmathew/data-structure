@@ -17,17 +17,19 @@
 
 """
 
-class Solution(object):
-    def longestCommonPrefix(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: str
-        """
-        prefix = ""
-        for i in range(len(strs[0])):
-            for s in strs[1:]:
-                if i==len(s) or  s[i] != strs[0][i]:
-                    return prefix
-            prefix += strs[0][i]
-        return prefix
-
+def longestCommonPrefix(strs):
+    """
+    :type strs: List[str]
+    :rtype: str
+    """
+    prefix = ""
+    for i in range(len(strs[0])):
+        for s in strs[1:]:
+            if i==len(s) or  s[i] != strs[0][i]:
+                return prefix
+        prefix += strs[0][i]
+    return prefix
+print(["flower","flow","flight"])
+print(longestCommonPrefix(["flower","flow","flight"]))
+print(["dog","racecar","car"])
+print(longestCommonPrefix(["dog","racecar","car"]))
