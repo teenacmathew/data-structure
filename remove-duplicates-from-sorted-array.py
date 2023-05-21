@@ -17,15 +17,17 @@ def removeDuplicates(nums):
     :type nums: List[int]
     :rtype: int
     """
-    print(nums)
+
     i = 0
     j = 1
 
-    while j < len(nums) and j > i:
+    while j in range(1,len(nums)):
         if nums[i] == nums[j]:
             j = j + 1
         else:
             nums[i+1] = nums[j]
             i = i + 1
+            j = j + 1
     del nums[i+1:]
-    print(nums)
+    return i+1
+
